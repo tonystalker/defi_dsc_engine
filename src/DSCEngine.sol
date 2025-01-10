@@ -1,24 +1,4 @@
-// Layout of Contract:
-// version
-// imports
-// errors
-// interfaces, libraries, contracts
-// Type declarations
-// State variables
-// Events
-// Modifiers
-// Functions
 
-// Layout of Functions:
-// constructor
-// receive function (if exists)
-// fallback function (if exists)
-// external
-// public
-// internal
-// private
-// internal & private view & pure functions
-// external & public view & pure functions
 
 // SPDX-License-Identifier: MIT
 
@@ -105,7 +85,7 @@ contract DSCEngine is ReentrancyGuard {
             revert DSCEngine__TokenAddressesAndPriceFeedAddressesAmountsDontMatch();
         }
         // These feeds will be the USD pairs
-        // For example ETH / USD 
+        // For example ETH / USD or BTC / USD
         for (uint256 i = 0; i < tokenAddresses.length; i++) {
             s_priceFeeds[tokenAddresses[i]] = priceFeedAddresses[i];
             s_collateralTokens.push(tokenAddresses[i]);
